@@ -14,6 +14,9 @@ else
   elif [ $firstParam == loss ]
   then
     retVal=`ping -c 10 -s 32760 $2 | grep packets | awk '{print $6}' | sed 's/.$//'`
+  else
+    echo "Invalid parameter"
+    exit 1
   fi
 fi
 echo $retVal
